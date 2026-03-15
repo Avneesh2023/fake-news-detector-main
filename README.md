@@ -4,16 +4,24 @@
 ![Flask](https://img.shields.io/badge/Flask-REST%20API-lightgrey)
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB)
 ![Accuracy](https://img.shields.io/badge/Accuracy-99.6%25-brightgreen)
+![GitHub](https://img.shields.io/badge/GitHub-AryanStack91-black)
 
-An end-to-end NLP-powered fake news detection system with a React frontend 
-and Flask REST API backend. Built using an ensemble of three machine learning 
+An end-to-end NLP-powered fake news detection system with a React frontend
+and Flask REST API backend. Built using an ensemble of three machine learning
 models achieving 99.6% accuracy on 44,000+ news articles.
 
 ---
 
 ## 🚀 Live Demo
 
-> Run locally following the setup instructions below.
+> ⚡ Run locally using the setup instructions below, then expose publicly using ngrok.
+```bash
+# Start Flask
+python app.py
+
+# Expose publicly
+.\ngrok.exe http 5000
+```
 
 ---
 
@@ -38,7 +46,7 @@ models achieving 99.6% accuracy on 44,000+ news articles.
 | Vectorization | TF-IDF (5000 features, bigrams) |
 | Backend | Flask REST API |
 | Frontend | React.js |
-| Deployment | Render |
+| Tunneling | ngrok |
 
 ---
 
@@ -118,14 +126,16 @@ python -m spacy download en_core_web_sm
 ```
 
 ### 3. Download the dataset
-Download the ISOT Fake News Dataset and place `True.csv` 
+Download the ISOT Fake News Dataset and place `True.csv`
 and `Fake.csv` in the project folder.
+
 Dataset: https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets
 
 ### 4. Train the model
 ```bash
 python train_model.py
 ```
+
 This will create:
 - `fake_news_model.pkl`
 - `tfidf_vectorizer.pkl`
@@ -145,6 +155,13 @@ python app.py
 ```
 
 Open **http://127.0.0.1:5000** in your browser.
+
+### 7. Expose publicly with ngrok (optional)
+```bash
+.\ngrok.exe http 5000
+```
+
+Share the generated URL with anyone!
 
 ---
 
@@ -178,8 +195,11 @@ Analyse a news article and return prediction.
 
 ## 📸 Screenshots
 
-> Real news detection with 100% confidence
-> Fake news detection with individual model votes
+### ✅ Real news detection
+![Real News](https://i.imgur.com/placeholder1.png)
+
+### ⚠️ Fake news detection
+![Fake News](https://i.imgur.com/placeholder2.png)
 
 ---
 
@@ -195,7 +215,7 @@ Analyse a news article and return prediction.
 
 ## 👨‍💻 Author
 
-**Aryan** — [GitHub](https://github.com/AryanStack91)
+**Aryan Prajapati** — [GitHub](https://github.com/AryanStack91)
 
 ---
 
