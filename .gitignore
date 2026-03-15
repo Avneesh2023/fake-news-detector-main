@@ -1,0 +1,15 @@
+*.pkl
+*.csv
+node_modules/
+frontend/node_modules/
+frontend/build/
+__pycache__/
+*.pyc
+.env
+desktop.ini
+tempCodeRunnerFile.py
+.ipynb_checkpoints/
+*.ipynb
+static/
+templates/
+requirement.txt
