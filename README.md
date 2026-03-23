@@ -3,12 +3,12 @@
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![Flask](https://img.shields.io/badge/Flask-REST%20API-lightgrey)
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB)
-![Accuracy](https://img.shields.io/badge/Accuracy-99.6%25-brightgreen)
+![Accuracy](https://img.shields.io/badge/Accuracy-96%25-brightgreen)
 ![GitHub](https://img.shields.io/badge/GitHub-AryanStack91-black)
 
 An end-to-end NLP-powered fake news detection system with a React frontend
 and Flask REST API backend. Built using an ensemble of three machine learning
-models achieving 99.6% accuracy on 44,000+ news articles.
+models achieving 96% accuracy on 44,000+ news articles.
 
 ---
 
