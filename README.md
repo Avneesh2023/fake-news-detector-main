@@ -1,224 +1,147 @@
-# 📰 Fake News Detector
+📰 Fake News Detector (AI-Powered)
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![Flask](https://img.shields.io/badge/Flask-REST%20API-lightgrey)
-![React](https://img.shields.io/badge/React-Frontend-61DAFB)
-![Accuracy](https://img.shields.io/badge/Accuracy-96%25-brightgreen)
-![GitHub](https://img.shields.io/badge/GitHub-AryanStack91-black)
+Python • Flask • React • NLP • Machine Learning • Hugging Face Deployment
 
-An end-to-end NLP-powered fake news detection system with a React frontend
-and Flask REST API backend. Built using an ensemble of three machine learning
-models achieving 96% accuracy on 44,000+ news articles.
+An end-to-end AI-powered Fake News Detection system that analyzes news articles and classifies them as REAL or FAKE using an ensemble of machine learning models.
+Deployed live using Hugging Face Spaces with a clean and responsive UI.
 
----
+🚀 Live Demo
 
-## 🚀 Live Demo
+👉 Try it here:
+🔗 https://aryan9170-fake-news-detector.hf.space/
 
-> ⚡ Run locally using the setup instructions below, then expose publicly using ngrok.
-```bash
-# Start Flask
-python app.py
-
-# Expose publicly
-.\ngrok.exe http 5000
-```
-
----
-
-## ✨ Features
-
-- 🤖 **Ensemble Model** — Logistic Regression + Naive Bayes + Passive-Aggressive voting classifier
-- 📊 **Confidence Score** — Shows how confident the model is in its prediction
-- 🗳️ **Individual Model Votes** — See what each model thinks independently
-- 📝 **Word & Character Counter** — Real-time article length tracking
-- ⚡ **Fast Predictions** — Results in under 2 seconds
-- 🎨 **Clean React UI** — Modern responsive frontend
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Language | Python 3.10 |
-| ML Models | scikit-learn |
-| NLP | NLTK, spaCy |
-| Vectorization | TF-IDF (5000 features, bigrams) |
-| Backend | Flask REST API |
-| Frontend | React.js |
-| Tunneling | ngrok |
-
----
-
-## 📁 Project Structure
-```
-fake-news-detector/
-├── app.py                  ← Flask REST API
-├── train_model.py          ← Model training script
-├── requirements.txt        ← Python dependencies
-├── build.sh                ← Render build script
-├── render.yaml             ← Render deployment config
-└── frontend/
-    ├── src/
-    │   └── App.js          ← React frontend
-    └── public/
-        └── index.html
-```
-
----
-
-## 🧠 How It Works
-```
-Raw Article Text
-      │
-      ▼
-Text Preprocessing (spaCy + NLTK)
-  • Lowercase
-  • Remove URLs & punctuation
-  • Lemmatization
-  • Stopword removal
-      │
-      ▼
+✨ Key Features
+🤖 Ensemble ML Model
+Combines:
+Logistic Regression
+Naive Bayes
+Passive-Aggressive Classifier
+📊 Confidence Score
+Displays prediction certainty (%)
+🗳️ Model Voting System
+Shows predictions from each individual model
+⚡ Fast Inference
+Results generated in under 2 seconds
+📝 Live Text Analysis
+Word count
+Character count
+🎨 Modern UI
+Built with React for smooth user experience
+🌐 Deployed on Hugging Face Spaces
+No setup required — accessible anywhere
+🛠️ Tech Stack
+Layer	Technology
+Language	Python 3
+ML Models	scikit-learn
+NLP	NLTK, spaCy
+Vectorization	TF-IDF (5000 features, bigrams)
+Backend	Flask (REST API)
+Frontend	React.js
+Deployment	Hugging Face Spaces
+🧠 How It Works
+Raw News Article
+       │
+       ▼
+Text Preprocessing
+ (spaCy + NLTK)
+ • Lowercasing
+ • Remove URLs & punctuation
+ • Lemmatization
+ • Stopword removal
+       │
+       ▼
 TF-IDF Vectorization
-  • 5000 features
-  • Unigrams + Bigrams
-      │
-      ▼
-Ensemble Model (Majority Voting)
-  ┌─────────────────────────────┐
-  │ Logistic Regression         │
-  │ Naive Bayes                 │
-  │ Passive-Aggressive          │
-  └─────────────────────────────┘
-      │
-      ▼
-  REAL or FAKE + Confidence %
-```
+ • 5000 features
+ • Unigrams + Bigrams
+       │
+       ▼
+Ensemble Model (Voting)
+ ┌──────────────────────────┐
+ │ Logistic Regression      │
+ │ Naive Bayes              │
+ │ Passive-Aggressive       │
+ └──────────────────────────┘
+       │
+       ▼
+Prediction:
+REAL or FAKE + Confidence %
+📊 Model Performance
+Metric	Score
+Accuracy	~96%
+Precision	High
+Recall	High
+F1 Score	High
 
----
+📌 Trained on 44,898 articles from the ISOT dataset:
 
-## 📊 Model Performance
-
-| Metric | Before spaCy | After spaCy |
-|--------|-------------|-------------|
-| F1 Score | 0.99 | 1.00 |
-| Accuracy | 99.2% | 99.6% |
-| Precision | 0.99 | 1.00 |
-| Recall | 0.99 | 1.00 |
-
-Trained on **44,898 articles** from the ISOT Fake News Dataset
-(21,417 real articles from Reuters + 23,481 fake articles)
-
----
-
-## ⚙️ Setup & Installation
-
-### 1. Clone the repository
-```bash
+21,417 real (Reuters)
+23,481 fake news sources
+⚙️ Run Locally
+1️⃣ Clone Repository
 git clone https://github.com/AryanStack91/fake-news-detector.git
 cd fake-news-detector
-```
-
-### 2. Install Python dependencies
-```bash
+2️⃣ Install Dependencies
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
-```
+3️⃣ Add Dataset
 
-### 3. Download the dataset
-Download the ISOT Fake News Dataset and place `True.csv`
-and `Fake.csv` in the project folder.
+Download dataset:
+https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets
 
-Dataset: https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets
+Place:
 
-### 4. Train the model
-```bash
+True.csv
+Fake.csv
+4️⃣ Train Model
 python train_model.py
-```
-
-This will create:
-- `fake_news_model.pkl`
-- `tfidf_vectorizer.pkl`
-- `scaler.pkl`
-
-### 5. Build React frontend
-```bash
+5️⃣ Run Backend
+python app.py
+6️⃣ Run Frontend
 cd frontend
 npm install
 npm run build
 cd ..
-```
-
-### 6. Run the app
-```bash
-python app.py
-```
-
-Open **http://127.0.0.1:5000** in your browser.
-
-### 7. Expose publicly with ngrok (optional)
-```bash
-.\ngrok.exe http 5000
-```
-
-Share the generated URL with anyone!
-
----
-
-## 🔌 API Reference
-
-### POST /predict
-
-Analyse a news article and return prediction.
-
-**Request:**
-```json
+7️⃣ Open App
+http://127.0.0.1:5000
+🔌 API Reference
+POST /predict
+Request:
 {
-  "text": "Your news article text here..."
+  "text": "Enter news article here..."
 }
-```
-
-**Response:**
-```json
+Response:
 {
   "result": "FAKE",
-  "confidence": 100,
+  "confidence": 98.5,
   "votes": {
     "logistic_regression": "FAKE",
-    "naive_bayes": "FAKE",
+    "naive_bayes": "REAL",
     "passive_aggressive": "FAKE"
   }
 }
-```
+📸 Screenshots
+✅ Real News Detection
+⚠️ Fake News Detection
 
----
+(Add screenshots here for better GitHub appeal)
 
-## 📸 Screenshots
+🗂️ Dataset
+📦 ISOT Fake News Dataset
+44,898 total articles
+Sources:
+Reuters (Real)
+PolitiFact & others (Fake)
+🔮 Future Improvements
+🔗 Integration with live news APIs
+🤖 Advanced AI recommendations
+🌍 Multilingual support
+📱 Mobile optimization
+🧠 Deep Learning models (LSTM / BERT)
+👨‍💻 Author
 
-### ✅ Real news detection
-![Real News](https://i.imgur.com/placeholder1.png)
+Aryan Prajapati
+🔗 GitHub: https://github.com/AryanStack91
 
-### ⚠️ Fake news detection
-![Fake News](https://i.imgur.com/placeholder2.png)
+📄 License
 
----
-
-## 🗂️ Dataset
-
-**ISOT Fake News Dataset**
-- 44,898 total articles
-- Real news sourced from Reuters.com
-- Fake news sourced from PolitiFact & other fact-checking sites
-- Topics: politics, world news, US news
-
----
-
-## 👨‍💻 Author
-
-**Aryan Prajapati** — [GitHub](https://github.com/AryanStack91)
-
----
-
-## 📄 License
-
-MIT License — feel free to use this project for learning!
+MIT License — free to use for learning and projects.
