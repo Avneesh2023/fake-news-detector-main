@@ -4,18 +4,13 @@ Python Flask React Accuracy GitHub
 An end-to-end NLP-powered fake news detection system with a React frontend and Flask REST API backend. Built using an ensemble of three machine learning models achieving 96% accuracy on 44,000+ news articles.
 
 🚀 Live Demo
-👉 https://aryan9170-fake-news-detector.hf.space/
-
-🚀 Live Demo
 ⚡ Run locally using the setup instructions below, then expose publicly using ngrok.
 
-Start Flask
-
+# Start Flask
 python app.py
 
-Expose publicly
-
-.\ngrok.exe http 5000
+# Expose publicly
+https://huggingface.co/spaces/aryan9170/fake-news-detector
 
 ✨ Features
 🤖 Ensemble Model — Logistic Regression + Naive Bayes + Passive-Aggressive voting classifier
@@ -24,126 +19,112 @@ Expose publicly
 📝 Word & Character Counter — Real-time article length tracking
 ⚡ Fast Predictions — Results in under 2 seconds
 🎨 Clean React UI — Modern responsive frontend
-
 🛠️ Tech Stack
-Layer Technology
-Language Python 3.10
-ML Models scikit-learn
-NLP NLTK, spaCy
-Vectorization TF-IDF (5000 features, bigrams)
-Backend Flask REST API
-Frontend React.js
-Tunneling ngrok
-
+Layer	Technology
+Language	Python 3.10
+ML Models	scikit-learn
+NLP	NLTK, spaCy
+Vectorization	TF-IDF (5000 features, bigrams)
+Backend	Flask REST API
+Frontend	React.js
+Tunneling	ngrok
 📁 Project Structure
 fake-news-detector/
-├── app.py ← Flask REST API
-├── train_model.py ← Model training script
-├── requirements.txt ← Python dependencies
-├── build.sh ← Render build script
-├── render.yaml ← Render deployment config
+├── app.py                  ← Flask REST API
+├── train_model.py          ← Model training script
+├── requirements.txt        ← Python dependencies
+├── build.sh                ← Render build script
+├── render.yaml             ← Render deployment config
 └── frontend/
-├── src/
-│ └── App.js ← React frontend
-└── public/
-└── index.html
-
+    ├── src/
+    │   └── App.js          ← React frontend
+    └── public/
+        └── index.html
 🧠 How It Works
 Raw Article Text
-│
-▼
+      │
+      ▼
 Text Preprocessing (spaCy + NLTK)
-• Lowercase
-• Remove URLs & punctuation
-• Lemmatization
-• Stopword removal
-│
-▼
+  • Lowercase
+  • Remove URLs & punctuation
+  • Lemmatization
+  • Stopword removal
+      │
+      ▼
 TF-IDF Vectorization
-• 5000 features
-• Unigrams + Bigrams
-│
-▼
+  • 5000 features
+  • Unigrams + Bigrams
+      │
+      ▼
 Ensemble Model (Majority Voting)
-┌─────────────────────────────┐
-│ Logistic Regression │
-│ Naive Bayes │
-│ Passive-Aggressive │
-└─────────────────────────────┘
-│
-▼
-REAL or FAKE + Confidence %
-
+  ┌─────────────────────────────┐
+  │ Logistic Regression         │
+  │ Naive Bayes                 │
+  │ Passive-Aggressive          │
+  └─────────────────────────────┘
+      │
+      ▼
+  REAL or FAKE + Confidence %
 📊 Model Performance
-Metric Before spaCy After spaCy
-F1 Score 0.99 1.00
-Accuracy 99.2% 99.6%
-Precision 0.99 1.00
-Recall 0.99 1.00
-
+Metric	Before spaCy	After spaCy
+F1 Score	0.7	0.85
+Accuracy	91.2%	96%
+Precision	0.7	0.85
+Recall	0.7	0.85
 Trained on 44,898 articles from the ISOT Fake News Dataset (21,417 real articles from Reuters + 23,481 fake articles)
 
 ⚙️ Setup & Installation
-
-Clone the repository
+1. Clone the repository
 git clone https://github.com/AryanStack91/fake-news-detector.git
-
 cd fake-news-detector
-Install Python dependencies
+2. Install Python dependencies
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
-Download the dataset
+3. Download the dataset
 Download the ISOT Fake News Dataset and place True.csv and Fake.csv in the project folder.
 
 Dataset: https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets
 
-Train the model
+4. Train the model
 python train_model.py
-
 This will create:
+
 fake_news_model.pkl
 tfidf_vectorizer.pkl
 scaler.pkl
-
-Build React frontend
+5. Build React frontend
 cd frontend
 npm install
 npm run build
 cd ..
-Run the app
+6. Run the app
 python app.py
+Open http://127.0.0.1:5000 in your browser.
 
-Open http://127.0.0.1:5000
- in your browser.
-
-Expose publicly with ngrok (optional)
-.\ngrok.exe http 5000
-
-Share the generated URL with anyone!
+7. Expose publicly with HuggingFace on
+8. (https://huggingface.co/spaces/aryan9170/fake-news-detector)
+ 
 
 🔌 API Reference
-
 POST /predict
 Analyse a news article and return prediction.
 
 Request:
 
 {
-"text": "Your news article text here..."
+  "text": "Your news article text here..."
 }
-
 Response:
 
 {
-"result": "FAKE",
-"confidence": 100,
-"votes": {
-"logistic_regression": "FAKE",
-"naive_bayes": "FAKE",
-"passive_aggressive": "FAKE"
+  "result": "FAKE",
+  "confidence": 100,
+  "votes": {
+    "logistic_regression": "FAKE",
+    "naive_bayes": "FAKE",
+    "passive_aggressive": "FAKE"
+  }
 }
-}
-
 📸 Screenshots
 ✅ Real news detection
 Real News
@@ -158,9 +139,9 @@ ISOT Fake News Dataset
 Real news sourced from Reuters.com
 Fake news sourced from PolitiFact & other fact-checking sites
 Topics: politics, world news, US news
-
 👨‍💻 Author
 Aryan Prajapati — GitHub
 
 📄 License
 MIT License — feel free to use this project for learning!
+
