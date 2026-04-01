@@ -1,147 +1,116 @@
-📰 Fake News Detector (AI-Powered)
-
-Python • Flask • React • NLP • Machine Learning • Hugging Face Deployment
-
-An end-to-end AI-powered Fake News Detection system that analyzes news articles and classifies them as REAL or FAKE using an ensemble of machine learning models.
-Deployed live using Hugging Face Spaces with a clean and responsive UI.
-
+📰 Fake News Detector 🚀
+<p align="center"> <b>AI-Powered Fake News Detection System</b><br> <i>Flask • React • NLP • Machine Learning • Hugging Face</i> </p> <p align="center"> <a href="https://aryan9170-fake-news-detector.hf.space/"> <img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-blue?style=for-the-badge&logo=vercel"> </a> <a href="https://github.com/AryanStack91/fake-news-detector"> <img src="https://img.shields.io/github/stars/AryanStack91/fake-news-detector?style=for-the-badge"> </a> <img src="https://img.shields.io/badge/Accuracy-96%25-brightgreen?style=for-the-badge"> <img src="https://img.shields.io/badge/Made%20With-Python%20%7C%20React-orange?style=for-the-badge"> </p>
 🚀 Live Demo
+<p align="center"> <a href="https://aryan9170-fake-news-detector.hf.space/"> <img src="https://img.shields.io/badge/Try%20Now-Hugging%20Face-yellow?style=for-the-badge&logo=huggingface"> </a> </p>
+🎯 Project Overview
 
-👉 Try it here:
-🔗 https://aryan9170-fake-news-detector.hf.space/
+An end-to-end NLP-based Fake News Detection system that classifies news articles as REAL or FAKE using an ensemble of machine learning models.
 
-✨ Key Features
-🤖 Ensemble ML Model
-Combines:
+✨ Designed with:
+
+⚡ Fast predictions
+🎨 Clean UI
+🤖 Explainable AI (model votes + confidence)
+🎥 Demo Preview (Add your GIF here)
+<p align="center"> <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="700"/> </p>
+
+👉 Replace this GIF with your actual project demo (I can help you create one)
+
+✨ Features
+🤖 Ensemble Learning
 Logistic Regression
 Naive Bayes
-Passive-Aggressive Classifier
-📊 Confidence Score
-Displays prediction certainty (%)
-🗳️ Model Voting System
-Shows predictions from each individual model
-⚡ Fast Inference
-Results generated in under 2 seconds
-📝 Live Text Analysis
+Passive-Aggressive
+📊 Confidence Score (%)
+🗳️ Model Voting Visualization
+⚡ < 2s Prediction Speed
+📝 Live Text Stats
 Word count
 Character count
-🎨 Modern UI
-Built with React for smooth user experience
+🎨 Responsive React UI
 🌐 Deployed on Hugging Face Spaces
-No setup required — accessible anywhere
-🛠️ Tech Stack
-Layer	Technology
-Language	Python 3
-ML Models	scikit-learn
-NLP	NLTK, spaCy
-Vectorization	TF-IDF (5000 features, bigrams)
-Backend	Flask (REST API)
-Frontend	React.js
-Deployment	Hugging Face Spaces
-🧠 How It Works
-Raw News Article
-       │
-       ▼
-Text Preprocessing
- (spaCy + NLTK)
- • Lowercasing
- • Remove URLs & punctuation
- • Lemmatization
- • Stopword removal
-       │
-       ▼
+🧠 System Architecture
+User Input (News Article)
+        │
+        ▼
+Text Preprocessing (spaCy + NLTK)
+        │
+        ▼
 TF-IDF Vectorization
- • 5000 features
- • Unigrams + Bigrams
-       │
-       ▼
+        │
+        ▼
 Ensemble Model (Voting)
- ┌──────────────────────────┐
- │ Logistic Regression      │
- │ Naive Bayes              │
- │ Passive-Aggressive       │
- └──────────────────────────┘
-       │
-       ▼
-Prediction:
-REAL or FAKE + Confidence %
+        │
+        ▼
+REAL / FAKE + Confidence Score
+🛠️ Tech Stack
+<p align="center"> <img src="https://skillicons.dev/icons?i=python,flask,react,sklearn,git" /> </p>
+Layer	Technology
+Language	Python
+Backend	Flask
+Frontend	React.js
+ML Models	scikit-learn
+NLP	spaCy, NLTK
+Deployment	Hugging Face
 📊 Model Performance
-Metric	Score
-Accuracy	~96%
-Precision	High
-Recall	High
-F1 Score	High
-
-📌 Trained on 44,898 articles from the ISOT dataset:
-
-21,417 real (Reuters)
-23,481 fake news sources
-⚙️ Run Locally
-1️⃣ Clone Repository
+<p align="center"> <img src="https://img.shields.io/badge/Accuracy-96%25-brightgreen?style=for-the-badge"> <img src="https://img.shields.io/badge/Dataset-44K%2B%20Articles-blue?style=for-the-badge"> </p>
+📦 Dataset: ISOT Fake News Dataset
+📰 44,898 articles
+🧠 Balanced classification performance
+⚙️ Local Setup
+# Clone repo
 git clone https://github.com/AryanStack91/fake-news-detector.git
 cd fake-news-detector
-2️⃣ Install Dependencies
+
+# Install dependencies
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
-3️⃣ Add Dataset
 
-Download dataset:
-https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets
-
-Place:
-
-True.csv
-Fake.csv
-4️⃣ Train Model
+# Train model
 python train_model.py
-5️⃣ Run Backend
+
+# Run backend
 python app.py
-6️⃣ Run Frontend
+
+Frontend:
+
 cd frontend
 npm install
 npm run build
-cd ..
-7️⃣ Open App
-http://127.0.0.1:5000
-🔌 API Reference
+🔌 API Usage
 POST /predict
-Request:
 {
-  "text": "Enter news article here..."
+  "text": "News article here..."
 }
 Response:
 {
-  "result": "FAKE",
-  "confidence": 98.5,
+  "result": "REAL",
+  "confidence": 97.3,
   "votes": {
-    "logistic_regression": "FAKE",
+    "logistic_regression": "REAL",
     "naive_bayes": "REAL",
     "passive_aggressive": "FAKE"
   }
 }
-📸 Screenshots
-✅ Real News Detection
-⚠️ Fake News Detection
-
-(Add screenshots here for better GitHub appeal)
-
-🗂️ Dataset
-📦 ISOT Fake News Dataset
-44,898 total articles
-Sources:
-Reuters (Real)
-PolitiFact & others (Fake)
-🔮 Future Improvements
-🔗 Integration with live news APIs
-🤖 Advanced AI recommendations
-🌍 Multilingual support
-📱 Mobile optimization
-🧠 Deep Learning models (LSTM / BERT)
+🔮 Future Enhancements
+🌍 Multilingual Fake News Detection
+🔗 Live News API Integration
+🤖 Deep Learning (BERT / LSTM)
+📱 Mobile App Version
+📊 Analytics Dashboard
 👨‍💻 Author
 
 Aryan Prajapati
-🔗 GitHub: https://github.com/AryanStack91
+
+<p align="center"> <a href="https://github.com/AryanStack91"> <img src="https://img.shields.io/badge/GitHub-AryanStack91-black?style=for-the-badge&logo=github"> </a> </p>
+⭐ Support
+
+If you like this project:
+
+👉 Give it a ⭐ on GitHub
+👉 Share it with others
+👉 Add it to your portfolio
 
 📄 License
 
-MIT License — free to use for learning and projects.
+MIT License
