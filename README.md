@@ -1,116 +1,158 @@
-📰 Fake News Detector 🚀
-<p align="center"> <b>AI-Powered Fake News Detection System</b><br> <i>Flask • React • NLP • Machine Learning • Hugging Face</i> </p> <p align="center"> <a href="https://aryan9170-fake-news-detector.hf.space/"> <img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-blue?style=for-the-badge&logo=vercel"> </a> <a href="https://github.com/AryanStack91/fake-news-detector"> <img src="https://img.shields.io/github/stars/AryanStack91/fake-news-detector?style=for-the-badge"> </a> <img src="https://img.shields.io/badge/Accuracy-96%25-brightgreen?style=for-the-badge"> <img src="https://img.shields.io/badge/Made%20With-Python%20%7C%20React-orange?style=for-the-badge"> </p>
+📰 Fake News Detector
+<p align="center"> <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python"> <img src="https://img.shields.io/badge/Flask-Backend-black?style=for-the-badge&logo=flask"> <img src="https://img.shields.io/badge/React-Frontend-blue?style=for-the-badge&logo=react"> <img src="https://img.shields.io/badge/Accuracy-96%25-brightgreen?style=for-the-badge"> </p>
+
+An end-to-end NLP-powered Fake News Detection system with a React frontend and Flask REST API backend.
+Built using an ensemble of three machine learning models achieving ~96% accuracy on 44,000+ news articles.
+
 🚀 Live Demo
-<p align="center"> <a href="https://aryan9170-fake-news-detector.hf.space/"> <img src="https://img.shields.io/badge/Try%20Now-Hugging%20Face-yellow?style=for-the-badge&logo=huggingface"> </a> </p>
-🎯 Project Overview
 
-An end-to-end NLP-based Fake News Detection system that classifies news articles as REAL or FAKE using an ensemble of machine learning models.
+👉 Try it here:
+🔗 https://aryan9170-fake-news-detector.hf.space/
 
-✨ Designed with:
-
-⚡ Fast predictions
-🎨 Clean UI
-🤖 Explainable AI (model votes + confidence)
-🎥 Demo Preview (Add your GIF here)
-<p align="center"> <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="700"/> </p>
-
-👉 Replace this GIF with your actual project demo (I can help you create one)
+⚡ No setup required — fully deployed on Hugging Face Spaces.
 
 ✨ Features
-🤖 Ensemble Learning
-Logistic Regression
-Naive Bayes
-Passive-Aggressive
-📊 Confidence Score (%)
-🗳️ Model Voting Visualization
-⚡ < 2s Prediction Speed
-📝 Live Text Stats
-Word count
-Character count
-🎨 Responsive React UI
-🌐 Deployed on Hugging Face Spaces
-🧠 System Architecture
-User Input (News Article)
-        │
-        ▼
-Text Preprocessing (spaCy + NLTK)
-        │
-        ▼
-TF-IDF Vectorization
-        │
-        ▼
-Ensemble Model (Voting)
-        │
-        ▼
-REAL / FAKE + Confidence Score
+🤖 Ensemble Model — Logistic Regression + Naive Bayes + Passive-Aggressive voting classifier
+📊 Confidence Score — Shows how confident the model is in its prediction
+🗳️ Individual Model Votes — See what each model predicts independently
+📝 Word & Character Counter — Real-time article length tracking
+⚡ Fast Predictions — Results in under 2 seconds
+🎨 Clean React UI — Modern responsive frontend
 🛠️ Tech Stack
-<p align="center"> <img src="https://skillicons.dev/icons?i=python,flask,react,sklearn,git" /> </p>
 Layer	Technology
-Language	Python
-Backend	Flask
-Frontend	React.js
+Language	Python 3.10
 ML Models	scikit-learn
-NLP	spaCy, NLTK
-Deployment	Hugging Face
+NLP	NLTK, spaCy
+Vectorization	TF-IDF (5000 features, bigrams)
+Backend	Flask REST API
+Frontend	React.js
+Deployment	Hugging Face Spaces
+(Optional) Tunneling	ngrok
+📁 Project Structure
+fake-news-detector/
+├── app.py                  ← Flask REST API
+├── train_model.py          ← Model training script
+├── requirements.txt        ← Python dependencies
+├── build.sh                ← Render build script
+├── render.yaml             ← Render deployment config
+└── frontend/
+    ├── src/
+    │   └── App.js          ← React frontend
+    └── public/
+        └── index.html
+🧠 How It Works
+Raw Article Text
+      │
+      ▼
+Text Preprocessing (spaCy + NLTK)
+  • Lowercase
+  • Remove URLs & punctuation
+  • Lemmatization
+  • Stopword removal
+      │
+      ▼
+TF-IDF Vectorization
+  • 5000 features
+  • Unigrams + Bigrams
+      │
+      ▼
+Ensemble Model (Majority Voting)
+  ┌─────────────────────────────┐
+  │ Logistic Regression         │
+  │ Naive Bayes                 │
+  │ Passive-Aggressive          │
+  └─────────────────────────────┘
+      │
+      ▼
+  REAL or FAKE + Confidence %
 📊 Model Performance
-<p align="center"> <img src="https://img.shields.io/badge/Accuracy-96%25-brightgreen?style=for-the-badge"> <img src="https://img.shields.io/badge/Dataset-44K%2B%20Articles-blue?style=for-the-badge"> </p>
-📦 Dataset: ISOT Fake News Dataset
-📰 44,898 articles
-🧠 Balanced classification performance
-⚙️ Local Setup
-# Clone repo
+Metric	Score
+Accuracy	~96%
+Precision	High
+Recall	High
+F1 Score	High
+
+📌 Trained on 44,898 articles from the ISOT Fake News Dataset:
+
+21,417 real articles (Reuters)
+23,481 fake articles
+⚙️ Setup & Installation
+1. Clone the repository
 git clone https://github.com/AryanStack91/fake-news-detector.git
 cd fake-news-detector
-
-# Install dependencies
+2. Install Python dependencies
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
+3. Download the dataset
 
-# Train model
+Download the ISOT dataset and place True.csv and Fake.csv in the project folder
+
+🔗 https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets
+
+4. Train the model
 python train_model.py
 
-# Run backend
-python app.py
+This will create:
 
-Frontend:
-
+fake_news_model.pkl
+tfidf_vectorizer.pkl
+scaler.pkl
+5. Build React frontend
 cd frontend
 npm install
 npm run build
-🔌 API Usage
+cd ..
+6. Run the app
+python app.py
+
+Open 👉 http://127.0.0.1:5000
+
+7. Expose publicly with ngrok (optional)
+.\ngrok.exe http 5000
+🔌 API Reference
 POST /predict
+
+Analyse a news article and return prediction
+
+Request:
 {
-  "text": "News article here..."
+  "text": "Your news article text here..."
 }
 Response:
 {
-  "result": "REAL",
-  "confidence": 97.3,
+  "result": "FAKE",
+  "confidence": 98.5,
   "votes": {
-    "logistic_regression": "REAL",
-    "naive_bayes": "REAL",
+    "logistic_regression": "FAKE",
+    "naive_bayes": "FAKE",
     "passive_aggressive": "FAKE"
   }
 }
-🔮 Future Enhancements
-🌍 Multilingual Fake News Detection
-🔗 Live News API Integration
-🤖 Deep Learning (BERT / LSTM)
-📱 Mobile App Version
-📊 Analytics Dashboard
+📸 Screenshots
+
+✅ Real news detection
+(Add screenshot here)
+
+⚠️ Fake news detection
+(Add screenshot here)
+
+🗂️ Dataset
+
+ISOT Fake News Dataset
+
+44,898 total articles
+Real news: Reuters
+Fake news: PolitiFact & other sources
+Topics: politics, world news, US news
 👨‍💻 Author
 
 Aryan Prajapati
-
-<p align="center"> <a href="https://github.com/AryanStack91"> <img src="https://img.shields.io/badge/GitHub-AryanStack91-black?style=for-the-badge&logo=github"> </a> </p>
-⭐ Support
-
-If you like this project:
-
-👉 Give it a ⭐ on GitHub
-👉 Share it with others
-👉 Add it to your portfolio
+🔗 https://github.com/AryanStack91
 
 📄 License
 
-MIT License
+MIT License — feel free to use this project for learning!
+
+⭐ Support
+
+If you found this useful, consider giving it a ⭐ on GitHub!
