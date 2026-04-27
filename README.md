@@ -32,7 +32,7 @@ https://huggingface.co/spaces/aryan9170/fake-news-detector
 - 🗳️ **Individual Model Votes** — See what each model thinks independently
 - 📝 **Word & Character Counter** — Real-time article length tracking
 - ⚡ **Fast Predictions** — Results in under 2 seconds
-- 🎨 **Clean React UI** — Modern responsive frontend
+- 🎨 **Premium Modern UI** — Beautiful dark-mode glassmorphism design with gradients and animations
 
 ---
 
@@ -209,9 +209,10 @@ Analyse a news article and return prediction.
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Authors & Contributors
 
-**Aryan Prajapati** — [GitHub](https://github.com/AryanStack91)
+- **Aryan Prajapati** — [GitHub](https://github.com/AryanStack91)
+- **Avneesh** — ML Model Training, Testing & Performance Optimization — [GitHub](https://github.com/Avneesh2023)
 
 ---
 

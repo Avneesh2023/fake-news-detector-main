@@ -3,13 +3,11 @@ from flask_cors import CORS
 import joblib
 import re
 import os
-import spacy
 from nltk.corpus import stopwords
 
 app = Flask(__name__, static_folder='frontend/build', static_url_path='')
 CORS(app)
 
-nlp        = spacy.load('en_core_web_sm')
 model      = joblib.load('fake_news_model.pkl')
 vectorizer = joblib.load('tfidf_vectorizer.pkl')
 scaler     = joblib.load('scaler.pkl')
@@ -19,9 +17,7 @@ def preprocess(text):
     text = str(text).lower()
     text = re.sub(r'http\S+|www\S+', '', text)
     text = re.sub(r'[^a-z\s]', '', text)
-    doc  = nlp(text, disable=['parser', 'ner'])
-    tokens = [token.lemma_ for token in doc
-              if token.text not in stops and not token.is_punct]
+    tokens = [word for word in text.split() if word not in stops]
     return ' '.join(tokens)
 
 @app.route('/predict', methods=['POST'])
